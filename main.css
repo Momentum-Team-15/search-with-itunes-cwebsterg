@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: rgb(0,42,79);
+    background-color: rgb(18, 137, 142);
   }
 
 ul {
@@ -20,20 +20,56 @@ ul {
     font-weight: bolder;
 }
 
-/* attempting to format even a teeny bit the player ya know like in the center of the freaking page; below represents trying with the audio tag, a class attached to audio tag, and a div surrounding the audio tag with class of player */
-.player {   
+#results {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+
 }
 
-.playback {
-    border: white;
-    align-items: center;
+.trackDetails {
+    border: groove thick rgb(139,125,247);
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: min-content;
+    margin: 10px;
+    border-radius: 3px;
+    /* box-shadow: 0 0 0 1px rgb(0 0 0 / 20%); */
+    /* transition: all 200ms ease-out; */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: x-small;
+    padding: 3px;
+    
 }
 
-audio {
-    align-items: center;
+img {
+    border: thin rgb(139,125,247);
+    width: 80px;
+    margin-bottom: 5px;
+    align-content: flex-start;
 }
+
+/* attempting to format even a teeny bit the player ya know like in the center of the freaking page; below represents trying with the audio tag, a class attached to audio tag, and a div surrounding the audio tag with class of player */
+#player {   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    /* width: 75%; */
+    list-style: none;
+    padding-top: 25px;
+    border-radius: 25px;
+    border-top: 0.1px solid #40dfdf;    
+    border-left: 0.1px solid #40dfdf;
+    background-color: #1f1f2a;
+    box-shadow: 0 4px 8px 0 rgb(139,125,247), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#playback {
+    width: 50vw;
+    margin:25px;
+}
+
 
 
 
@@ -78,15 +114,16 @@ input:hover {
 
 input:focus,
 input:not(:placeholder-shown) {
-    width: 250px;
+    width: 150px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #FFB870;
+    text-align: center;
 }
 
 
 
 
 
-/* fun hover effect Scottie found that I want to play with and possibly incorporate */
+
 
 /* to remove the underline from links using pseudo-class */
 a:link {
@@ -102,14 +139,14 @@ a:hover {
     color: rgb(139,125,247);
 }
 
-
+/* fun hover effect Scottie found that I want to play with and possibly incorporate */
 ul {
     margin: 5%;
-    width: 75%;
+    /* width: 75%; */
     display: flex;
     flex-direction: row;
     list-style: none;
-    padding: 25px 0;
+    padding: 10px 0;
     border-radius: 25px;
     border-top: 0.1px solid #40dfdf;    
     border-left: 0.1px solid #40dfdf;

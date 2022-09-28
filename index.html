@@ -10,21 +10,18 @@
 <body>
   <header>
     <ul>
-      <li class="links"><a href="index.html"><h2>My Library</h2></a></h2></li>
-      <div>
-        <form id="search-box">
+      <li class="links"><a href="index.html"><h3>My Library</h3></a></li>
+      <li class="links">
+        <a href="javascript:void(0)" onclick="window.open('justplay.html','newWin','width=519,height=362')"><h3>Just play...</h3></a></li>
+      </ul>
+      <div id="player">
+        <form id="search-box" auto-complete="off">
             <input type="text" placeholder="Search for Artist" class="search" required>
         </form>
+        <audio id="playback" autoplay controls src=""></audio>
       </div>
-      <li class="links">
-        <a href="javascript:void(0)" onclick="window.open('justplay.html','newWin','width=519,height=362')">
-          <h2>Just play...</h2></a></li>
-    </ul>
   </header>
-  <div id="player">
-    <audio id="playback" controls src=""></audio>
-  </div>
-  <div id="searchResults">
+  <div id="results">
     
   </div>
 </body>
