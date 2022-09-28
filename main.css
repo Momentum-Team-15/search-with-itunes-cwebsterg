@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: myWriting;
+    src: url(resources/myWriting.ttf);
+}
+
+body {
+    background-color: rgb(0,42,79);
+  }
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: myWriting;
+    font-weight: bolder;
+}
+
+/* attempting to format even a teeny bit the player ya know like in the center of the freaking page; below represents trying with the audio tag, a class attached to audio tag, and a div surrounding the audio tag with class of player */
+.player {   
+    display: flex;
+    justify-content: center;
+}
+
+.playback {
+    border: white;
+    align-items: center;
+}
+
+audio {
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* styling to get the search bubble centered in header to work */
+input {
+    color: white;
+    font-size: 16px;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    border: solid 3px #9A86FD;
+    outline: none;
+    border-radius: 35px;
+    transition: all 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #9A86FD;
+}
+/* pseudo class effects for the onfocus search box */
+input::placeholder {
+    color: #efefef;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+
+input:focus::placeholder {
+    opacity: 1;
+}
+
+input:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #FFB870;
+}
+
+input:focus,
+input:not(:placeholder-shown) {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #FFB870;
+}
+
+
+
+
+
+/* fun hover effect Scottie found that I want to play with and possibly incorporate */
+
+/* to remove the underline from links using pseudo-class */
+a:link {
+    text-decoration: none;
+    color: rgb(139,125,247);
+}
+a:visited {
+    text-decoration: none;
+    color: rgb(139,125,247);
+}
+a:hover {
+    text-decoration: none;
+    color: rgb(139,125,247);
+}
+
+
+ul {
+    margin: 5%;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 25px 0;
+    border-radius: 25px;
+    border-top: 0.1px solid #40dfdf;    
+    border-left: 0.1px solid #40dfdf;
+    background-color: #1f1f2a;
+    box-shadow: 0 4px 8px 0 rgb(139,125,247), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+li {
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+li:after {
+    display: block;
+    content: '';
+    border-bottom: solid 1px rgb(139,125,247);
+    padding-bottom: 1%;
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+}
+
+li:hover:after {
+    transform: scaleX(1);
+}
