@@ -1,0 +1,191 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: myWriting;
+    src: url(resources/myWriting.ttf);
+}
+
+#page {
+    background-image: repeating-radial-gradient(rgb(28,29,37), rgb(18,137,142));
+}
+
+/* body {
+    background-color: rgb(18, 137, 142);
+} */
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: myWriting;
+    font-weight: bolder;
+    min-width: 75;
+}
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    background: conical
+    background-color: #1f1f2a, ;
+    
+}
+.trackDetails {
+    border: groove thick rgb(139,125,247);
+    background-color: #1f1f2a;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    margin: 1vh;
+    border-radius: 25px;
+    /* box-shadow: 0 0 0 1px rgb(0 0 0 / 20%); */
+    /* transition: all 200ms ease-out; */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: x-small;
+    padding: 10px;
+    color: white;
+}
+
+img {
+    border: 3px rgb(139,125,247);
+    width: 80px;
+    margin-bottom: 5px;
+    align-content: flex-start;
+}
+
+.trackAlbumTitle {
+    color: rgb(139,125,247);
+}
+
+/* attempting to format even a teeny bit the player ya know like in the center of the freaking page; below represents trying with the audio tag, a class attached to audio tag, and a div surrounding the audio tag with class of player */
+#player {   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vw;
+    /* width: 75%; */
+    list-style: none;
+    padding-top: 25px;
+    border-radius: 25px;
+    /* border-top: 0.1px solid #40dfdf;    
+    border-left: 0.1px solid #40dfdf; */
+    border: thick groove rgb(139,125,247);
+    background-color: #1f1f2a;
+    box-shadow: 0 4px 8px 0 rgb(139,125,247), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#playback {
+    width: 50vw;
+    margin:25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* styling to get the search bubble centered in header to work */
+input {
+    color: white;
+    font-size: 16px;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    border: solid 3px #9A86FD;
+    outline: none;
+    border-radius: 35px;
+    transition: all 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #9A86FD;
+}
+/* pseudo class effects for the onfocus search box */
+input::placeholder {
+    color: #efefef;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+
+input:focus::placeholder {
+    opacity: 1;
+}
+
+input:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #FFB870;
+}
+
+input:focus,
+input:not(:placeholder-shown) {
+    width: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 #FFB870;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* to remove the underline from links using pseudo-class */
+a:link {
+    text-decoration: none;
+    color: rgb(139,125,247);
+}
+a:visited {
+    text-decoration: none;
+    color: rgb(139,125,247);
+}
+a:hover {
+    text-decoration: none;
+    color: rgb(139,125,247);
+}
+
+/* fun hover effect Scottie found that I want to play with and possibly incorporate */
+ul {
+    /* margin: 1vh; */
+    /* width: 75%; */
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 25px;
+    border-top: 0.1px solid #40dfdf;    
+    border-left: 0.1px solid #40dfdf;
+    background-color: #1f1f2a;
+    box-shadow: 0 4px 8px 0 rgb(139,125,247), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+li {
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+li:after {
+    display: block;
+    content: '';
+    border-bottom: solid 1px rgb(139,125,247);
+    padding-bottom: 1%;
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+}
+
+li:hover:after {
+    transform: scaleX(1);
+}
