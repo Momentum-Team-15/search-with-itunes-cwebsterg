@@ -8,9 +8,13 @@
     src: url(resources/myWriting.ttf);
 }
 
-body {
+#page {
+    background-image: repeating-radial-gradient(rgb(28,29,37), rgb(18,137,142));
+}
+
+/* body {
     background-color: rgb(18, 137, 142);
-  }
+} */
 
 ul {
     display: flex;
@@ -18,35 +22,46 @@ ul {
     justify-content: space-around;
     font-family: myWriting;
     font-weight: bolder;
+    min-width: 75;
 }
 
 #results {
     display: flex;
     flex-wrap: wrap;
-
+    justify-content:space-around;
+    background: conical
+    background-color: #1f1f2a, ;
+    
 }
-
 .trackDetails {
     border: groove thick rgb(139,125,247);
+    background-color: #1f1f2a;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    text-align: center;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
     width: min-content;
-    margin: 10px;
-    border-radius: 3px;
+    margin: 1vh;
+    border-radius: 25px;
     /* box-shadow: 0 0 0 1px rgb(0 0 0 / 20%); */
     /* transition: all 200ms ease-out; */
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: x-small;
-    padding: 3px;
-    
+    padding: 10px;
+    color: white;
 }
 
 img {
-    border: thin rgb(139,125,247);
+    border: 3px rgb(139,125,247);
     width: 80px;
     margin-bottom: 5px;
     align-content: flex-start;
+}
+
+.trackAlbumTitle {
+    color: rgb(139,125,247);
 }
 
 /* attempting to format even a teeny bit the player ya know like in the center of the freaking page; below represents trying with the audio tag, a class attached to audio tag, and a div surrounding the audio tag with class of player */
@@ -54,13 +69,14 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5px;
+    margin: 1vw;
     /* width: 75%; */
     list-style: none;
     padding-top: 25px;
     border-radius: 25px;
-    border-top: 0.1px solid #40dfdf;    
-    border-left: 0.1px solid #40dfdf;
+    /* border-top: 0.1px solid #40dfdf;    
+    border-left: 0.1px solid #40dfdf; */
+    border: thick groove rgb(139,125,247);
     background-color: #1f1f2a;
     box-shadow: 0 4px 8px 0 rgb(139,125,247), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -141,7 +157,7 @@ a:hover {
 
 /* fun hover effect Scottie found that I want to play with and possibly incorporate */
 ul {
-    margin: 5%;
+    /* margin: 1vh; */
     /* width: 75%; */
     display: flex;
     flex-direction: row;
