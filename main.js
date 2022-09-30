@@ -8,12 +8,10 @@ let trackPlay = document.getElementById("playback")
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   let artistNow = userInput.value;
-  let url = `${urlBase}${artistNow}&entity=song&limit=20`
+  let url = `${urlBase}${artistNow}&entity=song&limit=27`
   appleMusicSearch(url);
-    console.log("look at you you rock!");
-    console.log(url);
-    console.log(artistNow);
-});
+  console.log(url);
+})
 
 // create function using fetch to get music data from apple itunes api
 function appleMusicSearch(url) {
@@ -23,17 +21,26 @@ function appleMusicSearch(url) {
   })
     .then(function (response) {
       return response.json();
+      console.log("wtf");
     })
     .then(function (songData) {
-      searchResults(songData.results)  
+      searchResults(songData.results)
+      if (songData.results.length === 0) {
+        alert("No songs found but please try again!")
+      }  
       console.log(songData.results);
     });
 }
 
+
 // build search results grid in DOM
-const results = document.querySelector("#results");
+
+let results = document.querySelector(".results");
+const libraryDiv = document.querySelector("#libraryDiv");
 function searchResults(songList) {
   results.innerText = "";
+  firstFrame.innerText = "";
+  libraryDiv.innerText = "";
   for (let song of songList) {
 
 // create song container for individual results
@@ -47,7 +54,7 @@ function searchResults(songList) {
 
   let trackAlbumTitle = document.createElement("div");
   trackAlbumTitle.classList.add("trackAlbumTitle");
-  trackAlbumTitle.innerText = `${song.collectionName}`;
+  trackAlbumTitle.innerText = `${song.collectionName} (rel. ${moment(song.releaseDate).format("YYYY")})`;
 
   let trackArtist = document.createElement("div");
   trackArtist.classList.add("trackArtist");
@@ -57,9 +64,6 @@ function searchResults(songList) {
   trackTitle.classList.add("trackTitle");
   trackTitle.innerText = `${song.trackName}`;
 
-  // let playButton = document.createElement("button");
-  // playButton.classList.add("playButton");
-
   trackDetails.addEventListener("click", (e) => {
     trackPlay.src = `${song.previewUrl}`;
     trackPlay.volume = 0.1;
@@ -67,9 +71,52 @@ function searchResults(songList) {
 
   // write complete track details to individual div written to the searchResults div
   trackDetails.appendChild(trackAlbumCover);
-  trackDetails.appendChild(trackAlbumTitle);
   trackDetails.appendChild(trackArtist);
+  trackDetails.appendChild(trackAlbumTitle);
   trackDetails.appendChild(trackTitle);
-  // trackDetails.appendChild(playButton);
-  results.appendChild(trackDetails);
+  results.appendChild(trackDetails)
 }}
+
+
+
+// load iframe into page when just play link is clicked requiring clearing of results div
+let url = "https://www.youtube.com/embed/fI5_O0LqFBI?start=65;&autoplay=1&mute=1"
+let first = document.getElementById("first")
+first.addEventListener("click", (e) => {
+  const firstFrame = document.querySelector("#firstFrame");
+  results.innerText = "";
+  firstFrame.innerText = "";
+  libraryDiv.innerText = "";
+  let newFrame = document.createElement("IFRAME");
+  let frameButton = document.createElement("button");
+  frameButton.innerText = "Clear";
+  console.log("frame made");
+  newFrame.src = url
+  console.log(url);
+  firstFrame.appendChild(frameButton);
+  firstFrame.appendChild(newFrame);
+  // add event listener to clear the iframe off page
+  frameButton.addEventListener("click", (e) => {
+    firstFrame.innerText = "";
+  })
+})
+
+// load image onto page when My Library link clicked
+let library = document.getElementById("library");
+library.addEventListener("click", (e) => {
+
+  results.innerText = "";
+  firstFrame.innerText = "";
+  libraryDiv.innerText = "";
+  let imgDiv = document.createElement("img")
+  imgDiv.classList.add("libraryImg")
+  let imgButton = document.createElement("button")
+  imgButton.innerText = "Clear";
+  imgDiv.src = "http://127.0.0.1:8080/resources/mylibrary.jpg"
+  libraryDiv.appendChild(imgButton);
+  libraryDiv.appendChild(imgDiv);
+    // add event listener to clear the image off page
+    imgButton.addEventListener("click", (e) => {
+      libraryDiv.innerText = "";
+    })
+})

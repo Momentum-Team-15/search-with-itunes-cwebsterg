@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<div id="page">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="main.js" defer></script>
-  <link rel="stylesheet" href="main.css"></li>
-  <title>Music Search</title>
-</head>
-<body>
-  <header id="showcase">
-    <ul>
-      <li class="links"><a href="index.html"><h3>My Library</h3></a></li>
-      <li class="links">
-        <a href="javascript:void(0)" onclick="window.open('justplay.html','newWin','width=519,height=362')"><h3>Just play...</h3></a></li>
-      </ul>
-      <div id="player">
-        <form id="search-box" auto-complete="off">
-            <input type="text" placeholder="Search for Artist" class="search" required>
-        </form>
-        <audio id="playback" autoplay controls src=""></audio>
-      </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="http://127.0.0.1:8080/resources/favicon.ico">
+    <script src="moment.js"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="main.css"></li>
+    <title>It's a Music Thing</title>
+  </head>
+  <body>
+<header>
+  <ul>
+    <li class="links"><h3 id="library">My Library</h3></a></li>
+    <li class="links">
+    <h3 id="first">Just play...</h3></li>
+    </ul>
+    <div id="player">
+      <form id="search-box" auto-complete="off">
+        <input type="text" placeholder="Search for Song or Artist" class="search" required>
+      </form>
+      <audio id="playback" autoplay controls src=""></audio>
+    </div>
   </header>
-  <div id="results">
-    
-  </div>
+  <div id="clearButton"
+  <div class="results"></div>
+  <div id="firstFrame"></div>
+  <div id="libraryDiv"></div>
 </body>
-</div>
 </html>
