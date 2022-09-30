@@ -21,7 +21,6 @@ function appleMusicSearch(url) {
   })
     .then(function (response) {
       return response.json();
-      console.log("wtf");
     })
     .then(function (songData) {
       searchResults(songData.results)
@@ -92,7 +91,6 @@ first.addEventListener("click", (e) => {
   frameButton.innerText = "Clear";
   console.log("frame made");
   newFrame.src = url
-  console.log(url);
   firstFrame.appendChild(frameButton);
   firstFrame.appendChild(newFrame);
   // add event listener to clear the iframe off page
